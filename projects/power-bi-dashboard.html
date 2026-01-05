@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power BI Dashboard - Presha Patel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <div id="bot-scrollbar" class="bot-scrollbar-track">
+        <div id="bot-thumb" class="bot-scrollbar-thumb">🤖</div>
+    </div>
+
+    <header class="header-container">
+        <div class="container header-inner">
+            <a href="../index.html" class="logo">Presha Patel</a>
+            <nav class="navbar" id="navbar">
+                <div class="nav-container">
+                    <ul class="nav-menu">
+                        <li><a href="../index.html" class="nav-link">Home</a></li>
+                        <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
+                        <li><a href="../index.html#projects" class="nav-link active">Projects</a></li>
+                        <li><a href="../index.html#experience" class="nav-link">Experience</a></li>
+                        <li><a href="../index.html#activities" class="nav-link">Activities</a></li>
+                        <li><a href="../index.html#education" class="nav-link">Education</a></li>
+                        <li><a href="../index.html#certifications" class="nav-link">Certificates</a></li>
+                        <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+                    </ul>
+
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark/Light Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+
+                    <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <ul class="nav-menu">
+            <li><a href="../index.html" class="nav-link">Home</a></li>
+            <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
+            <li><a href="../index.html#projects" class="nav-link active">Projects</a></li>
+            <li><a href="../index.html#experience" class="nav-link">Experience</a></li>
+            <li><a href="../index.html#activities" class="nav-link">Activities</a></li>
+            <li><a href="../index.html#education" class="nav-link">Education</a></li>
+            <li><a href="../index.html#certifications" class="nav-link">Certificates</a></li>
+            <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+    </div>
+
+    <main>
+        <section class="hero project-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title">Student & Faculty Analytics</h1>
+                        <h2 class="hero-subtitle">Power BI Dashboard</h2>
+                        <div class="project-tags">
+                            <span class="tag">Power BI</span>
+                            <span class="tag">DAX</span>
+                            <span class="tag">Data Analysis</span>
+                            <span class="tag">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="project-details">
+                    <div class="detail-block">
+                        <h3>Overview</h3>
+                        <p>
+                            Created interactive KPI dashboards for monitoring institute performance, faculty
+                            workload, and student attendance. Implemented advanced DAX calculations and dynamic
+                            filtering with comprehensive data visualization to aid administrative decision-making.
+                        </p>
+                        <div class="project-links" style="margin-top: 1.5rem; border-top: none; padding-top: 0;">
+                            <a href="#" class="btn btn-primary">
+                                <i class="fas fa-external-link-alt"></i> View Visuals
+                            </a>
+                            <a href="#" class="btn btn-outline">
+                                <i class="fab fa-github"></i> Documentation
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="detail-block">
+                        <h3>Insights & Analytics</h3>
+                        <ul class="skill-list">
+                            <li><strong>Performance Tracking:</strong> Real-time monitoring of student grades and
+                                attendance.</li>
+                            <li><strong>Resource Allocation:</strong> Analysis of faculty workload to optimize
+                                scheduling.</li>
+                            <li><strong>Trends:</strong> Historical data analysis to identify improvement areas.</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-block full-width">
+                        <h3><i class="fab fa-markdown"></i> README.md</h3>
+                        <div class="readme-content">
+                            # Student & Faculty Analytics Dashboard
+
+                            ## Executive Summary
+                            A comprehensive Business Intelligence solution designed to provide actionable insights into
+                            academic performance and operational efficiency.
+
+                            ## Key Metrics
+                            - **Attendance Rate**: Daily/Monthly tracking.
+                            - **Grade Distribution**: Department-wise analysis.
+                            - **Faculty Loading**: Teaching hours vs. administrative tasks.
+
+                            ## Data Pipeline
+                            1. **Source**: MySQL Database (Student Info System).
+                            2. **Transformation**: Power Query for cleaning and normalization.
+                            3. **Modeling**: Star schema architecture.
+                            4. **Visualization**: Interactive Power BI reports.
+
+                            ## Tools Used
+                            - Microsoft Power BI Desktop
+                            - MySQL Server
+                            - DAX (Data Analysis Expressions)
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; <span id="current-year">2025</span> Presha Patel. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
