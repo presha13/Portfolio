@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Querying LLM - Presha Patel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <div id="bot-scrollbar" class="bot-scrollbar-track">
+        <div id="bot-thumb" class="bot-scrollbar-thumb">🤖</div>
+    </div>
+
+    <header class="header-container">
+        <div class="container header-inner">
+            <a href="../index.html" class="logo">Presha Patel</a>
+            <nav class="navbar" id="navbar">
+                <div class="nav-container">
+                    <ul class="nav-menu">
+                        <li><a href="../index.html" class="nav-link">Home</a></li>
+                        <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
+                        <li><a href="../index.html#projects" class="nav-link active">Projects</a></li>
+                        <li><a href="../index.html#experience" class="nav-link">Experience</a></li>
+                        <li><a href="../index.html#activities" class="nav-link">Activities</a></li>
+                        <li><a href="../index.html#education" class="nav-link">Education</a></li>
+                        <li><a href="../index.html#certifications" class="nav-link">Certificates</a></li>
+                        <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+                    </ul>
+
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark/Light Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+
+                    <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <ul class="nav-menu">
+            <li><a href="../index.html" class="nav-link">Home</a></li>
+            <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
+            <li><a href="../index.html#projects" class="nav-link active">Projects</a></li>
+            <li><a href="../index.html#experience" class="nav-link">Experience</a></li>
+            <li><a href="../index.html#activities" class="nav-link">Activities</a></li>
+            <li><a href="../index.html#education" class="nav-link">Education</a></li>
+            <li><a href="../index.html#certifications" class="nav-link">Certificates</a></li>
+            <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+    </div>
+
+    <main>
+        <section class="hero project-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title">Document Querying LLM</h1>
+                        <h2 class="hero-subtitle">Hybrid Retrieval RAG System</h2>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">RAG</span>
+                            <span class="tag">Ollama</span>
+                            <span class="tag">FAISS</span>
+                            <span class="tag">BM25</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="project-details">
+                    <div class="detail-block">
+                        <h3>Overview</h3>
+                        <p>
+                            Designed and developed a robust local document querying application using a Hybrid Retrieval Augmented Generation (RAG) system. The solution leverages FAISS for efficient dense vector similarity search running with <code>sentence-transformer/all-MiniLM-L6-V2</code> embeddings, combined with BM25 for precise sparse keyword matching. This hybrid pipeline is connected to the locally hosted Mistral LLM via Ollama to generate context-aware, highly accurate responses without relying on external cloud APIs.
+                        </p>
+                    </div>
+
+                    <div class="detail-block">
+                        <h3>Key Features</h3>
+                        <ul class="skill-list">
+                            <li><strong>Hybrid Retrieval:</strong> <span>Combines dense (FAISS) and sparse (BM25) retrieval methods for optimal context extraction.</span></li>
+                            <li><strong>Local LLM Inference:</strong> <span>Utilizes Ollama running Mistral locally for fast, private, and secure generation.</span></li>
+                            <li><strong>Advanced Embeddings:</strong> <span>Features the <code>sentence-transformers/all-MiniLM-L6-V2</code> model for high-quality semantic understanding.</span></li>
+                            <li><strong>Document Processing:</strong> <span>Automated ingestion, chunking, and indexing of various document types.</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-block full-width">
+                        <h3><i class="fab fa-markdown"></i> README.md</h3>
+                        <div class="readme-content">
+                            # Document Querying LLM (Hybrid RAG)
+
+                            ## Overview
+                            A powerful, privacy-first local document querying system implementing a sophisticated Hybrid Retrieval Augmented Generation (RAG) pipeline. This project allows users to chat with their documents contextually by retrieving the most relevant information using both semantic significance and keyword relevance.
+
+                            ## Architecture Pipeline
+                            1. **Document Ingestion**: Parsing text from PDFs, TXT, or other documents.
+                            2. **Chunking & Indexing**: Splitting text into chunks and computing embeddings using `all-MiniLM-L6-v2`.
+                            3. **Hybrid Search Strategy**:
+                               - **Dense Retrieval**: Searching vector space with FAISS to find semantically similar chunks.
+                               - **Sparse Retrieval**: Using BM25 algorithmic search for exact keyword match retrieval.
+                               - **Reciprocal Rank Fusion**: Reranking results from both retrievers to provide the absolute best context to the LLM.
+                            4. **Text Generation**: The integrated Mistral model (hosted via Ollama) reads the retrieved context and generates a precise answer.
+
+                            ## Tech Stack
+                            - **LLM**: Local Mistral via Ollama
+                            - **Embeddings**: `sentence-transformers/all-MiniLM-L6-v2`
+                            - **Vector Store**: FAISS
+                            - **Keyword Search**: BM25
+                            - **Language**: Python
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; <span id="current-year">2026</span> Presha Patel. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
