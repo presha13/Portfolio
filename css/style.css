@@ -1158,6 +1158,39 @@ footer {
     margin-top: 4rem;
 }
 
+/* --- About Section --- */
+.about-content {
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    padding: 0 1rem;
+}
+
+.about-content p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.about-content p:last-child {
+    margin-bottom: 0;
+}
+
+.about-content p strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        text-align: center;
+        padding: 0;
+    }
+}
+
 /* --- Responsive --- */
 /* --- Responsive Design --- */
 
