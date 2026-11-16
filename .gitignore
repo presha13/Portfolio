@@ -1,0 +1,6 @@
+# Private tailored resumes and cover letters - never publish
+resumes/
+
+# OS / editor
+.DS_Store
+Thumbs.db

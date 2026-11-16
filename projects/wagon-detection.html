@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wagon Detection - Presha Patel</title>
+    <meta name="description" content="Real-time wagon number recognition on NVIDIA Jetson with TensorRT, YOLOv11 and Florence OCR, built by Presha Patel.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -30,6 +31,7 @@
                 <div class="nav-container">
                     <ul class="nav-menu">
                         <li><a href="../index.html" class="nav-link">Home</a></li>
+                        <li><a href="../index.html#about" class="nav-link">About</a></li>
                         <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
                         <li><a href="../index.html#projects" class="nav-link active">Projects</a></li>
                         <li><a href="../index.html#experience" class="nav-link">Experience</a></li>
@@ -57,6 +59,7 @@
     <div class="mobile-menu">
         <ul class="nav-menu">
             <li><a href="../index.html" class="nav-link">Home</a></li>
+                        <li><a href="../index.html#about" class="nav-link">About</a></li>
             <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
             <li><a href="../index.html#projects" class="nav-link active">Projects</a></li>
             <li><a href="../index.html#experience" class="nav-link">Experience</a></li>
@@ -75,9 +78,10 @@
                         <h1 class="hero-title">Wagon Detection</h1>
                         <h2 class="hero-subtitle">Automated Wagon Number Recognition System</h2>
                         <div class="project-tags">
+                            <span class="tag">TensorRT</span>
+                            <span class="tag">Jetson Orin</span>
                             <span class="tag">YOLOv11</span>
                             <span class="tag">Florence OCR</span>
-                            <span class="tag">OpenCV</span>
                             <span class="tag">CUDA</span>
                         </div>
                     </div>
@@ -91,63 +95,43 @@
                     <div class="detail-block">
                         <h3>Overview</h3>
                         <p>
-                            Built a real-time wagon number detection system using YOLOv11 and OpenCV. Integrated
-                            Microsoft Florence OCR for accurate text extraction from moving trains, processing
-                            video feeds to generate automated, structured CSV logs for enterprise tracking.
+                            Built a real-time wagon number detection and telemetry extraction system deployed on resource-constrained embedded hardware (NVIDIA Jetson Orin, Xavier, and Nano). Optimized deep learning inference using TensorRT and CUDA with INT8/FP16 quantization. Integrated Microsoft Florence OCR for accurate text extraction from moving trains under continuous 1080p industrial streams.
                         </p>
-                        <div class="project-links" style="margin-top: 1.5rem; border-top: none; padding-top: 0;">
-                            <a href="#" class="btn btn-primary">
-                                <i class="fab fa-github"></i> View Code
-                            </a>
-                        </div>
                     </div>
 
                     <div class="detail-block">
                         <h3>Key Technologies</h3>
                         <ul class="skill-list">
-                            <li><strong>Model:</strong> YOLOv11 for object detection</li>
-                            <li><strong>OCR:</strong> Microsoft Florence for text recognition</li>
-                            <li><strong>Processing:</strong> OpenCV, CUDA, GStreamer, FFmpeg</li>
-                            <li><strong>Output:</strong> Automated CSV logging</li>
+                            <li><strong>Hardware Target:</strong> NVIDIA Jetson Orin, Xavier, Nano (ARM64)</li>
+                            <li><strong>Inference Runtime:</strong> NVIDIA TensorRT (FP16/INT8), CUDA</li>
+                            <li><strong>Vision Models:</strong> YOLOv11 & Microsoft Florence OCR</li>
+                            <li><strong>Streaming & Processing:</strong> OpenCV, GStreamer, V4L2</li>
+                            <li><strong>Telemetry:</strong> Automated structured logging & CSV ingestion</li>
                         </ul>
                     </div>
 
                     <div class="detail-block full-width">
                         <h3><i class="fab fa-markdown"></i> README.md</h3>
-                        <div class="readme-content">
-                            # Wagon Detection System
+                        <div class="readme-content"># Wagon Detection System
 
-                            ## Installation
-                            1. Clone the repository
-                            ```bash
-                            git clone https://github.com/presha13/wagon-detection.git
-                            ```
-                            2. Install dependencies
-                            ```bash
-                            pip install -r requirements.txt
-                            ```
+## Pipeline
+1. Capture continuous 1080p camera streams via GStreamer / V4L2
+2. Detect wagons and number plates with a TensorRT-optimized YOLOv11 engine (FP16/INT8)
+3. Extract wagon numbers with Microsoft Florence OCR
+4. Write structured telemetry logs and CSV output for downstream tracking
 
-                            ## Usage
-                            Run the main detection script:
-                            ```bash
-                            python detect.py --source video.mp4
-                            ```
-
-                            ## Features
-                            - Real-time detection using YOLOv11
-                            - High-accuracy OCR with Microsoft Florence
-                            - Automated CSV logging
-                        </div>
+## Features
+- Real-time detection on NVIDIA Jetson using TensorRT + YOLOv11
+- High-accuracy OCR with Microsoft Florence
+- Automated CSV logging</div>
                     </div>
 
                     <div class="detail-block">
                         <h3>Project Impact</h3>
                         <p>
                             This system significantly reduces manual effort in tracking railway wagons, minimizing human
-                            error
-                            and providing real-time data for logistics management. The PROD-grade pipeline ensures high
-                            efficiency
-                            and reliability in industrial environments.
+                            error and providing real-time data for logistics management. Running inference on the edge
+                            keeps the pipeline efficient and reliable in industrial environments.
                         </p>
                     </div>
 

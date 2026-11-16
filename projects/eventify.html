@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eventify - Presha Patel</title>
+    <meta name="description" content="Eventify: a live React billing and business management platform for event companies, built by Presha Patel.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -28,6 +29,7 @@
                 <div class="nav-container">
                     <ul class="nav-menu">
                         <li><a href="../index.html" class="nav-link">Home</a></li>
+                        <li><a href="../index.html#about" class="nav-link">About</a></li>
                         <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
                         <li><a href="../index.html#projects" class="nav-link active">Projects</a></li>
                         <li><a href="../index.html#experience" class="nav-link">Experience</a></li>
@@ -55,6 +57,7 @@
     <div class="mobile-menu">
         <ul class="nav-menu">
             <li><a href="../index.html" class="nav-link">Home</a></li>
+                        <li><a href="../index.html#about" class="nav-link">About</a></li>
             <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
             <li><a href="../index.html#projects" class="nav-link active">Projects</a></li>
             <li><a href="../index.html#experience" class="nav-link">Experience</a></li>
@@ -71,12 +74,14 @@
                 <div class="hero-content">
                     <div class="hero-text">
                         <h1 class="hero-title">Eventify</h1>
-                        <h2 class="hero-subtitle">Event Management Billing Application</h2>
+                        <h2 class="hero-subtitle">Billing &amp; Business Management Platform for Event Companies</h2>
                         <div class="project-tags">
-                            <span class="tag">HTML5</span>
-                            <span class="tag">CSS3</span>
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">Git</span>
+                            <span class="tag">React 18</span>
+                            <span class="tag">Vite</span>
+                            <span class="tag">Tailwind CSS</span>
+                            <span class="tag">React Router</span>
+                            <span class="tag">Recharts</span>
+                            <span class="tag">Vercel</span>
                         </div>
                     </div>
                 </div>
@@ -89,16 +94,17 @@
                     <div class="detail-block">
                         <h3>Overview</h3>
                         <p>
-                            Engineered a full-featured Single Page Application (SPA) for creating, managing, and
-                            storing event management invoices. Implemented complete CRUD functionality using
-                            browser localStorage and integrated PDF generation with CSV export features.
+                            Built and deployed a React web app that lets event-management businesses run their
+                            day-to-day operations: invoices, quotations, events, expenses and
+                            financial-year reporting. It talks to a REST backend with secure cookie-based sessions
+                            and server-side PDF generation, and is live on Vercel.
                         </p>
                         <div class="project-links" style="margin-top: 1.5rem; border-top: none; padding-top: 0;">
-                            <a href="https://presha13.github.io/Eventify/" target="_blank" class="btn btn-primary"
+                            <a href="https://eventify-billing-system.vercel.app/" target="_blank" class="btn btn-primary"
                                 rel="noopener noreferrer">
                                 <i class="fas fa-external-link-alt"></i> Live Demo
                             </a>
-                            <a href="https://github.com/presha13/Eventify" target="_blank" class="btn btn-outline"
+                            <a href="https://github.com/presha13/Billing-System-Frontend" target="_blank" class="btn btn-outline"
                                 rel="noopener noreferrer">
                                 <i class="fab fa-github"></i> View Code
                             </a>
@@ -108,34 +114,39 @@
                     <div class="detail-block">
                         <h3>Key Features</h3>
                         <ul class="skill-list">
-                            <li><strong>CRUD Operations:</strong> Create, Read, Update, and Delete invoices.</li>
-                            <li><strong>Data Persistence:</strong> Uses LocalStorage for data retention.</li>
-                            <li><strong>Export Options:</strong> Generate PDF invoices and export data to CSV.</li>
-                            <li><strong>Responsive UI:</strong> Optimized for various device sizes.</li>
+                            <li><strong>Billing:</strong> <span>Invoices with discounts and free items, payment status tracking, bill merging and bulk PDF export.</span></li>
+                            <li><strong>Quotations:</strong> <span>Create, track and convert quotations into bills (and back) in one click.</span></li>
+                            <li><strong>Authentication:</strong> <span>HttpOnly cookie sessions, protected routes, password reset and 30-minute inactivity logout.</span></li>
+                            <li><strong>Financial Years:</strong> <span>All data scoped by financial year, with automatic selection of the current period.</span></li>
+                            <li><strong>Operations:</strong> <span>Event calendar, expense tracking, product library and an analytics dashboard.</span></li>
+                            <li><strong>Productivity:</strong> <span>Voice input for line items and Alt-key shortcuts for fast navigation.</span></li>
+                            <li><strong>Resilience:</strong> <span>API client retries automatically while the backend wakes up from a cold start.</span></li>
                         </ul>
                     </div>
 
                     <div class="detail-block full-width">
                         <h3><i class="fab fa-markdown"></i> README.md</h3>
-                        <div class="readme-content">
-                            # Eventify - Event Management Billing
+                        <div class="readme-content"># Eventify Frontend
 
-                            ## Overview
-                            Eventify is a client-side web application for generating and managing invoices for event
-                            management services.
+React client for the Eventify billing platform, built with Vite and Tailwind CSS.
 
-                            ## Features
-                            - **Invoice Generation**: Create detailed invoices with multiple items.
-                            - **Local Storage**: Auto-save drafts and history.
-                            - **Export**: Download as PDF or export to CSV.
+## Quick Start
+1. npm install
+2. Create .env.local with VITE_API_BASE_URL=http://localhost:5001/api
+3. npm run dev
 
-                            ## Getting Started
-                            1. Open `index.html` in your browser.
-                            2. No internet connection required (offline first).
+## Structure
+- src/components/  UI grouped by domain (Auth, Billing, Quotations, Events, Expenses, Dashboard)
+- src/services/    API client (cookie auth, retry on cold start)
+- src/contexts/    Auth and Financial Year providers
 
-                            ## Tech Stack
-                            - HTML5, CSS3, Vanilla JavaScript
-                        </div>
+## Security
+- HttpOnly cookie sessions, no tokens in localStorage
+- Console logs and debuggers stripped from production builds
+- Route protection via ProtectedRoute
+
+## Tech Stack
+React 18, Vite, Tailwind CSS, React Router, Recharts, Lucide icons, Vercel</div>
                     </div>
 
                 </div>

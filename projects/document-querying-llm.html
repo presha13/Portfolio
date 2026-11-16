@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document Querying LLM - Presha Patel</title>
+    <meta name="description" content="Local hybrid RAG document querying system using FAISS, BM25 and Mistral via Ollama, built by Presha Patel.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -28,6 +29,7 @@
                 <div class="nav-container">
                     <ul class="nav-menu">
                         <li><a href="../index.html" class="nav-link">Home</a></li>
+                        <li><a href="../index.html#about" class="nav-link">About</a></li>
                         <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
                         <li><a href="../index.html#projects" class="nav-link active">Projects</a></li>
                         <li><a href="../index.html#experience" class="nav-link">Experience</a></li>
@@ -55,6 +57,7 @@
     <div class="mobile-menu">
         <ul class="nav-menu">
             <li><a href="../index.html" class="nav-link">Home</a></li>
+                        <li><a href="../index.html#about" class="nav-link">About</a></li>
             <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
             <li><a href="../index.html#projects" class="nav-link active">Projects</a></li>
             <li><a href="../index.html#experience" class="nav-link">Experience</a></li>
@@ -106,28 +109,26 @@
 
                     <div class="detail-block full-width">
                         <h3><i class="fab fa-markdown"></i> README.md</h3>
-                        <div class="readme-content">
-                            # Document Querying LLM (Hybrid RAG)
+                        <div class="readme-content"># Document Querying LLM (Hybrid RAG)
 
-                            ## Overview
-                            A powerful, privacy-first local document querying system implementing a sophisticated Hybrid Retrieval Augmented Generation (RAG) pipeline. This project allows users to chat with their documents contextually by retrieving the most relevant information using both semantic significance and keyword relevance.
+## Overview
+A powerful, privacy-first local document querying system implementing a sophisticated Hybrid Retrieval Augmented Generation (RAG) pipeline. This project allows users to chat with their documents contextually by retrieving the most relevant information using both semantic significance and keyword relevance.
 
-                            ## Architecture Pipeline
-                            1. **Document Ingestion**: Parsing text from PDFs, TXT, or other documents.
-                            2. **Chunking & Indexing**: Splitting text into chunks and computing embeddings using `all-MiniLM-L6-v2`.
-                            3. **Hybrid Search Strategy**:
-                               - **Dense Retrieval**: Searching vector space with FAISS to find semantically similar chunks.
-                               - **Sparse Retrieval**: Using BM25 algorithmic search for exact keyword match retrieval.
-                               - **Reciprocal Rank Fusion**: Reranking results from both retrievers to provide the absolute best context to the LLM.
-                            4. **Text Generation**: The integrated Mistral model (hosted via Ollama) reads the retrieved context and generates a precise answer.
+## Architecture Pipeline
+1. **Document Ingestion**: Parsing text from PDFs, TXT, or other documents.
+2. **Chunking & Indexing**: Splitting text into chunks and computing embeddings using `all-MiniLM-L6-v2`.
+3. **Hybrid Search Strategy**:
+   - **Dense Retrieval**: Searching vector space with FAISS to find semantically similar chunks.
+   - **Sparse Retrieval**: Using BM25 algorithmic search for exact keyword match retrieval.
+   - **Reciprocal Rank Fusion**: Reranking results from both retrievers to provide the absolute best context to the LLM.
+4. **Text Generation**: The integrated Mistral model (hosted via Ollama) reads the retrieved context and generates a precise answer.
 
-                            ## Tech Stack
-                            - **LLM**: Local Mistral via Ollama
-                            - **Embeddings**: `sentence-transformers/all-MiniLM-L6-v2`
-                            - **Vector Store**: FAISS
-                            - **Keyword Search**: BM25
-                            - **Language**: Python
-                        </div>
+## Tech Stack
+- **LLM**: Local Mistral via Ollama
+- **Embeddings**: `sentence-transformers/all-MiniLM-L6-v2`
+- **Vector Store**: FAISS
+- **Keyword Search**: BM25
+- **Language**: Python</div>
                     </div>
 
                 </div>

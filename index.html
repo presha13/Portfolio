@@ -5,6 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Presha Patel - Software Developer</title>
+    <meta name="description" content="Presha Patel - MS Computer Science student at NYU and software developer building backend systems, APIs and production AI/ML pipelines.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Presha Patel - Software Developer">
+    <meta property="og:description" content="MS CS @ NYU. Backend, APIs and production AI/ML systems: RAG, computer vision on NVIDIA Jetson, full-stack apps.">
+    <meta property="og:url" content="https://presha13.github.io/Portfolio/">
+    <meta property="og:image" content="https://presha13.github.io/Portfolio/assets/images/presha.jpg">
+    <meta name="twitter:card" content="summary">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -72,20 +79,12 @@
     </div>
 
     <main>
-        <!-- Hero, About, Skills, Projects sections omitted for brevity in search replacement context, 
-             assuming we can target the lines around nav and experience section directly or use larger context if needed.
-             Wait, I need to replace the section content. Let's focus on the section split first. 
-             If I can't do multiple discontinuous edits easily with replace_file_content (which I can't for nav AND section),
-             I will use multi_replace. switching to multi_replace. -->
-
-
-        <main>
             <section id="hero" class="hero">
                 <div class="container">
                     <div class="hero-content">
                         <div class="hero-text">
                             <h1 class="hero-title">Hi, I'm Presha Patel</h1>
-                            <h2 class="hero-subtitle">IT Graduate | Software Developer </h2>
+                            <h2 class="hero-subtitle">MS CS @ NYU | Software Developer</h2>
                             <p class="hero-description">
                                 Software Developer specializing in building clean, reliable, and scalable web systems.
                                 Experienced in developing robust backend services, databases, and APIs, with a passion
@@ -145,39 +144,39 @@
                     </div>
                     <div class="skills-grid">
                         <div class="skill-card">
-                            <h3><i class="fas fa-code skill-icon"></i> Programming Languages</h3>
+                            <h3><i class="fas fa-code skill-icon"></i> Languages</h3>
                             <ul class="skill-list">
                                 <li>Python</li>
-                                <li>JavaScript</li>
+                                <li>JavaScript / TypeScript</li>
                                 <li>C</li>
-                                <li>HTML, CSS</li>
+                                <li>SQL</li>
                             </ul>
                         </div>
                         <div class="skill-card">
-                            <h3><i class="fas fa-brain skill-icon"></i> AI/ML & Data Science</h3>
+                            <h3><i class="fas fa-server skill-icon"></i> Backend & Web</h3>
                             <ul class="skill-list">
+                                <li>FastAPI</li>
+                                <li>Node.js &amp; Express</li>
+                                <li>Next.js / React</li>
+                                <li>MySQL</li>
+                            </ul>
+                        </div>
+                        <div class="skill-card">
+                            <h3><i class="fas fa-brain skill-icon"></i> AI/ML</h3>
+                            <ul class="skill-list">
+                                <li>LLMs, RAG &amp; LangChain</li>
+                                <li>FAISS &amp; BM25 retrieval</li>
+                                <li>Computer Vision (YOLO, OCR)</li>
                                 <li>Deep Learning</li>
-                                <li>Computer Vision</li>
-                                <li>LangChain</li>
-                                <li>LLMs & RAG</li>
                             </ul>
                         </div>
                         <div class="skill-card">
-                            <h3><i class="fas fa-tools skill-icon"></i> Tools & Frameworks</h3>
+                            <h3><i class="fas fa-microchip skill-icon"></i> Deployment & Tools</h3>
                             <ul class="skill-list">
-                                <li>React.js</li>
-                                <li>Node.js</li>
-                                <li>Jupyter Notebook</li>
-                                <li>Git & GitHub</li>
-                            </ul>
-                        </div>
-                        <div class="skill-card">
-                            <h3><i class="fas fa-graduation-cap skill-icon"></i> Specializations</h3>
-                            <ul class="skill-list">
-                                <li>Data Structures & Algorithms</li>
-                                <li>Software Engineering</li>
-                                <li>Database Management</li>
-                                <li>Computer Vision</li>
+                                <li>NVIDIA TensorRT &amp; CUDA</li>
+                                <li>Jetson (Orin / Xavier)</li>
+                                <li>Git &amp; GitHub</li>
+                                <li>Power BI &amp; DAX</li>
                             </ul>
                         </div>
                     </div>
@@ -191,9 +190,7 @@
                         <p class="section-subtitle">Showcasing my work in AI/ML and web development</p>
                     </div>
                     <div class="projects-grid">
-                        <!-- New Project: Document Querying LLM -->
-                        <div class="project-card" onclick="location.href='projects/document-querying-llm.html'"
-                            style="cursor: pointer;">
+                        <a class="project-card" href="projects/document-querying-llm.html">
                             <div class="project-content">
                                 <h3 class="project-title">Document Querying LLM</h3>
                                 <p class="project-subtitle">Hybrid Retrieval RAG System</p>
@@ -214,32 +211,28 @@
                                     </span>
                                 </div>
                             </div>
-                        </div>
-                        <!-- New Project: Wagon Detection -->
-                        <div class="project-card" onclick="location.href='projects/wagon-detection.html'"
-                            style="cursor: pointer;">
+                        </a>
+                        <a class="project-card" href="projects/wagon-detection.html">
                             <div class="project-content">
                                 <h3 class="project-title">Wagon Detection</h3>
                                 <p class="project-subtitle">Automated Wagon Number Recognition System</p>
                                 <p class="project-description">
-                                    Built a real-time wagon number detection system using YOLOv11 and OpenCV. Integrated
-                                    Microsoft Florence OCR for accurate text extraction from moving trains.
+                                    Real-time wagon number recognition deployed on NVIDIA Jetson (Orin/Xavier) embedded hardware. Optimized inference using TensorRT INT8/FP16 and Microsoft Florence OCR.
                                 </p>
                                 <div class="project-links">
                                     <div class="project-tags">
+                                        <span class="tag">TensorRT</span>
+                                        <span class="tag">Jetson Orin</span>
                                         <span class="tag">YOLOv11</span>
-                                        <span class="tag">Florence OCR</span>
-                                        <span class="tag">OpenCV</span>
+                                        <span class="tag">CUDA</span>
                                     </div>
                                     <span class="btn">
                                         View Details <i class="fas fa-arrow-right"></i>
                                     </span>
                                 </div>
                             </div>
-                        </div>
-                        <!-- New Project: Employee Management -->
-                        <div class="project-card" onclick="location.href='projects/employee-management.html'"
-                            style="cursor: pointer;">
+                        </a>
+                        <a class="project-card" href="projects/employee-management.html">
                             <div class="project-content">
                                 <h3 class="project-title">Employee Management</h3>
                                 <p class="project-subtitle">HR & Payroll System for Xmatiq</p>
@@ -259,30 +252,29 @@
                                     </span>
                                 </div>
                             </div>
-                        </div>
-                        <div class="project-card" onclick="location.href='http://eventify-billing-system.vercel.app/'"
-                            style="cursor: pointer;">
+                        </a>
+                        <a class="project-card" href="projects/eventify.html">
                             <div class="project-content">
                                 <h3 class="project-title">Eventify</h3>
-                                <p class="project-subtitle">Event Management Billing Application</p>
+                                <p class="project-subtitle">Billing &amp; Business Management Platform</p>
                                 <p class="project-description">
-                                    Engineered a full-featured Single Page Application (SPA) for creating, managing, and
-                                    storing event management invoices.
+                                    Live React SaaS for event companies: invoices, quotations, events, expenses and
+                                    financial-year reports, with cookie-based auth and server-side PDF export.
                                 </p>
                                 <div class="project-links">
                                     <div class="project-tags">
-                                        <span class="tag">HTML5</span>
-                                        <span class="tag">CSS3</span>
-                                        <span class="tag">JavaScript</span>
+                                        <span class="tag">React</span>
+                                        <span class="tag">Vite</span>
+                                        <span class="tag">Tailwind</span>
+                                        <span class="tag">Vercel</span>
                                     </div>
                                     <span class="btn">
                                         View Details <i class="fas fa-arrow-right"></i>
                                     </span>
                                 </div>
                             </div>
-                        </div>
-                        <div class="project-card" onclick="location.href='projects/upnext-realtyy.html'"
-                            style="cursor: pointer;">
+                        </a>
+                        <a class="project-card" href="projects/upnext-realtyy.html">
                             <div class="project-content">
                                 <h3 class="project-title">UpNext Realtyy</h3>
                                 <p class="project-subtitle">Real Estate Marketing Website</p>
@@ -301,9 +293,8 @@
                                     </span>
                                 </div>
                             </div>
-                        </div>
-                        <div class="project-card" onclick="location.href='projects/power-bi-dashboard.html'"
-                            style="cursor: pointer;">
+                        </a>
+                        <a class="project-card" href="projects/power-bi-dashboard.html">
                             <div class="project-content">
                                 <h3 class="project-title">Power BI Dashboard</h3>
                                 <p class="project-subtitle">Student & Faculty Analytics Dashboard</p>
@@ -322,7 +313,7 @@
                                     </span>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </section>
@@ -363,7 +354,6 @@
                                     systems.</p>
                             </div>
                         </div>
-                        <!--
                         <div class="timeline-item">
                             <div class="timeline-content">
                                 <div class="timeline-header">
@@ -407,7 +397,6 @@
                                     Worked on real-world datasets and implemented various ML algorithms.</p>
                             </div>
                         </div>
-                        -->
                     </div>
                 </div>
             </section>
@@ -452,17 +441,17 @@
                             <div class="education-icon">
                                 <i class="fas fa-graduation-cap"></i>
                             </div>
-                            <h3>Bachelor of Engineering, IT</h3>
-                            <p class="education-institution">Ahmedabad Institute of Technology</p>
-                            <p class="education-meta">May 2025 | CGPA: 8.67</p>
+                            <h3>Master of Science, Computer Science</h3>
+                            <p class="education-institution">New York University (NYU)</p>
+                            <p class="education-meta">Fall 2026 – Present</p>
                         </div>
                         <div class="education-card">
                             <div class="education-icon">
-                                <i class="fas fa-school"></i>
+                                <i class="fas fa-graduation-cap"></i>
                             </div>
-                            <h3>Higher Secondary Education</h3>
-                            <p class="education-institution">ST. XAVIER HIGH SCHOOL XII | GSEB Board</p>
-                            <p class="education-meta">Passed Out: 2021 | Percentage: 72%</p>
+                            <h3>Bachelor of Engineering, IT</h3>
+                            <p class="education-institution">Ahmedabad Institute of Technology</p>
+                            <p class="education-meta">May 2025 | CGPA: 8.67</p>
                         </div>
                     </div>
                 </div>
@@ -508,10 +497,6 @@
                             <div class="contact-item">
                                 <i class="fas fa-envelope contact-icon"></i>
                                 <a href="mailto:preshapatel35@gmail.com">preshapatel35@gmail.com</a>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-phone contact-icon"></i>
-                                <a href="tel:+918799027624">+91-8799027624</a>
                             </div>
                             <div class="contact-item">
                                 <i class="fab fa-linkedin contact-icon"></i>

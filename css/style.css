@@ -83,15 +83,22 @@
     box-sizing: border-box;
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-    display: none;
-    /* Hide native scrollbar */
+/* Custom Scrollbar: hide the native one only where the bot thumb is usable (mouse/trackpad) */
+@media (pointer: fine) {
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    html {
+        scrollbar-width: none;
+    }
 }
 
-html {
-    scrollbar-width: none;
-    /* Firefox */
+/* On touch devices use the native scrollbar and hide the bot */
+@media (pointer: coarse) {
+    .bot-scrollbar-track {
+        display: none;
+    }
 }
 
 /* Bot Scrollbar Track */
@@ -121,13 +128,15 @@ html {
     text-align: center;
     cursor: grab;
     user-select: none;
-    transition: transform 0.1s;
-    /* Initial top will be set by JS */
+    touch-action: none;
+    transition: scale 0.1s;
+    /* Position is set by JS via transform */
 }
 
 .bot-scrollbar-thumb:active {
     cursor: grabbing;
-    transform: scale(1.2);
+    scale: 1.2;
+    /* Use `scale`, not `transform`, so the JS translateY isn't overridden */
 }
 
 html {
@@ -685,6 +694,14 @@ ul {
 .project-card {
     display: flex;
     flex-direction: column;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.project-card:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 4px;
 }
 
 .project-title {
@@ -1386,5 +1403,18 @@ footer {
     .hero-image img {
         width: 220px;
         height: 220px;
+    }
+}
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
     }
 }

@@ -1,7 +1,25 @@
 # Portfolio
-🌐 Portfolio
 
-This repository contains my personal portfolio website: presha13.github.io/Portfolio
-.
+🌐 Live site: [presha13.github.io/Portfolio](https://presha13.github.io/Portfolio/)
 
-I’m Presha Patel, a fresher passionate about software development and building scalable applications. I am looking for opportunities as a Software Developer or Junior Developer where I can apply my skills, learn, and grow. I am open to networking, collaborating, and most importantly, I am excited to work with startups where I can bring fresh ideas and contribute to impactful projects. This portfolio highlights my projects, skills, and achievements, and serves as a way to connect with recruiters and collaborators. 
+I'm Presha Patel, an MS Computer Science student at New York University and a software developer focused on backend systems, APIs and production AI/ML: hybrid RAG pipelines, computer vision on NVIDIA Jetson with TensorRT, and full-stack web apps.
+
+This repository holds my personal portfolio website: my projects, experience, skills and contact details.
+
+## Structure
+
+- `index.html`: main single-page portfolio
+- `projects/`: a detail page for each project
+- `css/style.css`: styles (light/dark themes)
+- `js/script.js`: navigation, theme switcher, scroll effects, contact form
+- `assets/images/`: profile photo and resume PDF
+
+## Running locally
+
+It's a static site with no build step. Open `index.html` directly, or serve the folder:
+
+```bash
+python -m http.server 8000
+```
+
+Connect with me on [LinkedIn](https://www.linkedin.com/in/presha-patel-1943a2271) or [GitHub](https://github.com/presha13).
