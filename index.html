@@ -10,7 +10,6 @@
     <meta property="og:title" content="Presha Patel - Software Developer">
     <meta property="og:description" content="MS CS @ NYU. Backend, APIs and production AI/ML systems: RAG, computer vision on NVIDIA Jetson, full-stack apps.">
     <meta property="og:url" content="https://presha13.github.io/Portfolio/">
-    <meta property="og:image" content="https://presha13.github.io/Portfolio/assets/images/presha.jpg">
     <meta name="twitter:card" content="summary">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -79,32 +78,71 @@
     </div>
 
     <main>
-            <section id="hero" class="hero">
+            <section id="hero" class="hero home-hero">
+                <div class="home-hero-bg" aria-hidden="true"></div>
                 <div class="container">
-                    <div class="hero-content">
-                        <div class="hero-text">
-                            <h1 class="hero-title">Hi, I'm Presha Patel</h1>
-                            <h2 class="hero-subtitle">MS CS @ NYU | Software Developer</h2>
-                            <p class="hero-description">
-                                Software Developer specializing in building clean, reliable, and scalable web systems.
-                                Experienced in developing robust backend services, databases, and APIs, with a passion
-                                for software architecture, clean code, and practical problem-solving.
+                    <div class="home-hero-inner">
+                        <div class="home-hero-text">
+                            <span class="contact-eyebrow"><span class="status-dot"></span> MS CS @ NYU &middot; Open to SWE &amp; AI/ML roles</span>
+                            <h1 class="home-hero-title">Hi, I'm <span class="gradient-text">Presha Patel</span></h1>
+                            <p class="home-hero-tagline">
+                                Software developer building scalable backends and production-ready AI systems.
                             </p>
-                            <div class="hero-actions">
-                                <a href="#contact" class="btn btn-primary">
-                                    <i class="fas fa-envelope"></i> Get In Touch
+                            <p class="home-hero-description">
+                                I design APIs, data layers and ML pipelines that hold up in the real world, from
+                                hybrid RAG search to real-time computer vision on NVIDIA Jetson.
+                            </p>
+                            <div class="home-hero-actions">
+                                <a href="#projects" class="btn btn-primary">
+                                    View Projects <i class="fas fa-arrow-right"></i>
                                 </a>
                                 <a href="assets/images/Presha_Patel_Resume.pdf" download class="btn btn-secondary">
-                                    <i class="fas fa-download"></i> Download Resume
+                                    <i class="fas fa-download"></i> Resume
                                 </a>
                             </div>
+                            <div class="home-hero-socials">
+                                <a href="https://github.com/presha13" target="_blank" rel="noopener noreferrer"
+                                    aria-label="GitHub"><i class="fab fa-github"></i></a>
+                                <a href="https://www.linkedin.com/in/presha-patel-1943a2271" target="_blank"
+                                    rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="mailto:preshapatel35@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
                         </div>
-                        <div class="hero-image">
-                            <img src="assets/images/presha.jpg" alt="Presha Patel">
-                        </div>
+
+                        <figure class="code-card" aria-label="Profile summary written as a Python class">
+                            <div class="code-card-bar">
+                                <span class="code-dot"></span><span class="code-dot"></span><span class="code-dot"></span>
+                                <span class="code-card-file">presha.py</span>
+                            </div>
+<pre class="code-card-body"><code><span class="tk-kw">class</span> <span class="tk-cls">Presha</span>(<span class="tk-cls">Engineer</span>):
+    role      = <span class="tk-str">"Software Developer"</span>
+    education = <span class="tk-str">"MS CS @ NYU"</span>
+    focus     = [<span class="tk-str">"Backend &amp; APIs"</span>,
+                 <span class="tk-str">"LLMs &amp; RAG"</span>,
+                 <span class="tk-str">"Edge AI on Jetson"</span>]
+    stack     = [<span class="tk-str">"Python"</span>, <span class="tk-str">"FastAPI"</span>,
+                 <span class="tk-str">"React"</span>, <span class="tk-str">"TensorRT"</span>]
+
+    <span class="tk-kw">def</span> <span class="tk-fn">open_to</span>(<span class="tk-self">self</span>):
+        <span class="tk-kw">return</span> [<span class="tk-str">"SWE"</span>, <span class="tk-str">"AI/ML"</span>]<span class="code-cursor"></span></code></pre>
+                        </figure>
+                    </div>
+
+                    <div class="home-hero-stack">
+                        <span class="home-hero-stack-label">Working with</span>
+                        <ul>
+                            <li>Python</li>
+                            <li>FastAPI</li>
+                            <li>Node.js</li>
+                            <li>React / Next.js</li>
+                            <li>MySQL</li>
+                            <li>LangChain</li>
+                            <li>FAISS</li>
+                            <li>TensorRT</li>
+                            <li>CUDA</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="ai-accent"></div>
             </section>
 
             <section id="about" class="section">

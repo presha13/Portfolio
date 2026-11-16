@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initBotScroller();
     initCurrentYear();
     initTypingAnimation();
-    initParallaxEffect();
 });
 
 // --- Navbar ---
@@ -253,20 +252,4 @@ function initTypingAnimation() {
         }
     };
     setTimeout(typeWriter, 400);
-}
-
-// --- Parallax effect for the hero accent ---
-function initParallaxEffect() {
-    const aiAccent = document.querySelector('.ai-accent');
-    if (!aiAccent || prefersReducedMotion) return;
-
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-        if (ticking) return;
-        ticking = true;
-        requestAnimationFrame(() => {
-            aiAccent.style.transform = `translateY(${window.scrollY * -0.5}px)`;
-            ticking = false;
-        });
-    }, { passive: true });
 }
