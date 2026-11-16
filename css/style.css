@@ -555,6 +555,17 @@ ul {
     box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.3);
 }
 
+/* In dark mode a black button disappears against the dark background, so invert it */
+[data-theme="dark"] .btn-secondary {
+    background: #F5F5F5;
+    color: #0F0F0F;
+    box-shadow: 0 10px 25px -5px rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+    background: #FFFFFF;
+}
+
 /* Image with organic shape or clean circle */
 .hero-image img {
     width: 400px;
@@ -1082,89 +1093,177 @@ ul {
     font-size: 0.95rem;
 }
 
-/* --- Contact & Footer --- */
-.contact-content {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 4rem;
+/* --- Contact --- */
+.contact-cta {
+    position: relative;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 4.5rem 4rem;
+    text-align: center;
     background: var(--bg-surface);
-    padding: 3rem;
-    border-radius: var(--radius-lg);
     border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    isolation: isolate;
 }
 
-.contact-info h3 {
-    margin-bottom: 2rem;
+/* Soft gradient glow behind the card content */
+.contact-cta::before {
+    content: '';
+    position: absolute;
+    inset: -40% -20% auto;
+    height: 80%;
+    background: var(--gradient-primary);
+    opacity: 0.08;
+    filter: blur(60px);
+    z-index: -1;
 }
 
-.contact-item {
+/* Thin gradient line along the top edge */
+.contact-cta::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-primary);
+}
+
+.contact-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.45rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-full);
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #22c55e;
+    box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.18);
+}
+
+.contact-heading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin: 1.5rem 0 1rem;
+    color: var(--text-primary);
+}
+
+.gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.contact-lead {
+    max-width: 600px;
+    margin: 0 auto;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.contact-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 2.25rem 0 3rem;
+}
+
+.contact-links {
+    display: grid;
+    grid-template-columns: 1.45fr 1fr 1fr;
+    gap: 1rem;
+    text-align: left;
+}
+
+.contact-link {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-    color: var(--text-secondary);
-}
-
-.contact-icon {
-    color: var(--primary);
-    width: 24px;
-}
-
-.contact-item a:hover {
-    color: var(--accent);
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 0.8rem;
-    background: var(--bg-surface);
+    gap: 0.9rem;
+    min-width: 0;
+    padding: 1rem 1.1rem;
     border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
+    border-radius: 16px;
+    background: var(--bg-primary);
     color: var(--text-primary);
-    font-family: inherit;
+    text-decoration: none;
+    transition: var(--transition);
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
+.contact-link > i:first-child {
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: var(--bg-secondary);
+    color: var(--primary);
+    font-size: 1.05rem;
+}
+
+.contact-link-text {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    flex: 1;
+}
+
+.contact-link-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+}
+
+.contact-link-value {
+    font-size: 0.92rem;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.contact-link-arrow {
+    flex-shrink: 0;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    transition: var(--transition);
+}
+
+.contact-link:hover {
     border-color: var(--primary);
-    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
 }
 
-/* Fix for Chrome/Edge Autofill Background */
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus {
-    -webkit-text-fill-color: var(--text-primary);
-    -webkit-box-shadow: 0 0 0px 1000px var(--bg-surface) inset;
-    transition: background-color 5000s ease-in-out 0s;
+.contact-link:hover .contact-link-arrow {
+    color: var(--primary);
+    transform: translateX(3px);
 }
 
-[data-theme="dark"] input:-webkit-autofill,
-[data-theme="dark"] input:-webkit-autofill:hover,
-[data-theme="dark"] input:-webkit-autofill:focus,
-[data-theme="dark"] textarea:-webkit-autofill,
-[data-theme="dark"] textarea:-webkit-autofill:hover,
-[data-theme="dark"] textarea:-webkit-autofill:focus {
-    -webkit-box-shadow: 0 0 0px 1000px #1e1e1e inset;
-    /* Slightly darker than surface */
-    -webkit-text-fill-color: var(--text-primary);
+.contact-link:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 3px;
 }
+
+/* --- Footer --- */
 
 footer {
     padding: 3rem 1rem;
@@ -1281,10 +1380,13 @@ footer {
         /* Left align buttons */
     }
 
-    /* Keep contact form stacked on smaller tablets */
-    .contact-content {
+    /* Stack contact links on smaller tablets */
+    .contact-cta {
+        padding: 3.5rem 1.5rem;
+    }
+
+    .contact-links {
         grid-template-columns: 1fr;
-        padding: 2rem;
     }
 
     .project-details {
@@ -1382,6 +1484,16 @@ footer {
 
 /* Small Mobile ( < 480px ) */
 @media (max-width: 480px) {
+    /* Give the email room on narrow phones; wrap only as a last resort */
+    .contact-link-arrow {
+        display: none;
+    }
+
+    .contact-link-value {
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
     .container {
         padding: 0 1rem;
     }

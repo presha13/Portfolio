@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
     initThemeSwitcher();
     initBotScroller();
-    initContactForm();
     initCurrentYear();
     initTypingAnimation();
     initParallaxEffect();
@@ -219,52 +218,6 @@ function initBotScroller() {
     window.addEventListener('scroll', updateThumbPosition, { passive: true });
     window.addEventListener('resize', updateThumbPosition);
     updateThumbPosition();
-}
-
-// --- Contact form (Web3Forms) ---
-function initContactForm() {
-    const form = document.getElementById('contact-form');
-    const formStatus = document.getElementById('form-status');
-    if (!form) return;
-
-    if (formStatus) {
-        formStatus.setAttribute('role', 'status');
-        formStatus.setAttribute('aria-live', 'polite');
-    }
-
-    const setStatus = (html, color) => {
-        if (!formStatus) return;
-        formStatus.innerHTML = html;
-        formStatus.style.color = color;
-    };
-
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const submitBtn = form.querySelector('button[type="submit"]');
-        if (submitBtn) submitBtn.disabled = true;
-
-        setStatus('<i class="fas fa-spinner fa-spin"></i> Sending...', 'var(--primary)');
-
-        try {
-            const response = await fetch(form.action, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                body: JSON.stringify(Object.fromEntries(new FormData(form)))
-            });
-            const result = await response.json();
-
-            if (!result.success) throw new Error(result.message || 'Failed to send message');
-
-            setStatus('<i class="fas fa-check"></i> Message sent successfully!', '#16a34a');
-            form.reset();
-        } catch (error) {
-            console.error('Form submission error:', error);
-            setStatus('<i class="fas fa-exclamation-triangle"></i> Error sending message. Please try again.', '#ef4444');
-        } finally {
-            if (submitBtn) submitBtn.disabled = false;
-            setTimeout(() => setStatus('', ''), 5000);
-        }
-    });
 }
 
 // --- Current year ---
